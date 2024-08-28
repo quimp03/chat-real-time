@@ -224,6 +224,8 @@
   
   .chat .inner-body {
     padding: 10px;
+    max-height: 450px;
+    overflow-y: auto;
   }
   
   .chat .inner-body .inner-name {
@@ -261,6 +263,7 @@
     border: 1px solid #ddd;
     border-radius: 15px;
     padding: 0 10px;
+
     outline: none;
   }
   
@@ -274,3 +277,15 @@
     cursor: pointer;
   }
   /* End chat */
+
+
+/* tooltip */
+.tooltip {
+    visibility: hidden;
+  }
+  
+  .tooltip.shown {
+    visibility: visible;
+    opacity: 1;
+  }
+  /* End tooltip */
