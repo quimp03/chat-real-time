@@ -11,8 +11,10 @@ const userMiddleware = require("../../middlewares/client/user.middleware");
 const settingMiddleware = require("../../middlewares/client/setting.middleware");
 const authMiddleware = require("../../middlewares/client/auth.middleware");
 
+
 const categoryMiddleware = require("../../middlewares/client/category.middleware");
 const cartMiddleware = require("../../middlewares/client/cart.middleware");
+const usersRoutes = require("./users.route");
 module.exports = (app) => {
   app.use("/checkout", checkoutRoutes);
 
