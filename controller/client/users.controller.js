@@ -1,3 +1,4 @@
+const User = require("../../models/user.model");
 // [GET] /users/not-friend
 module.exports.notFriend = async (req, res) => {
     res.render("client/pages/users/not-friend", {
