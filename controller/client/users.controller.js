@@ -1,5 +1,7 @@
 const User = require("../../models/user.model");
 const usersSocket = require("../../sockets/client/users.socket");
+const friendsList = res.locals.user.friendsList.map(user => user.user_id);
+
 // [GET] /users/not-friend
 module.exports.notFriend = async (req, res) => {
      // SocketIO
@@ -8,7 +10,12 @@ module.exports.notFriend = async (req, res) => {
     const userId = res.locals.user.id;
 
   const users = await User.find({
-    _id: { $ne: userId }, // not equal
+    $and: [
+        {_id: {$ne: userId}},// not equal
+        {_id: {$nin: requestFriends}}, // not in
+        {_id: {$nin: acceptFriends}}, // not in
+        {_id: {$nin: friendsList}} // not in
+      ],
     status: "active",
     deleted: false,
   }).select("avatar fullName");
