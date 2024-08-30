@@ -75,6 +75,7 @@ socket.on("SERVER_RETURN_LENGTH_ACCEPT_FRIEND", (data) => {
   // End SERVER_RETURN_LENGTH_ACCEPT_FRIEND
   // SERVER_RETURN_INFO_ACCEPT_FRIEND
 socket.on("SERVER_RETURN_INFO_ACCEPT_FRIEND", (data) => {
+   // Lấy thông tin của A để in ra trang Lời mời đã nhận của B
   const dataUsersAccept = document.querySelector(`[data-users-accept="${data.userIdB}"]`);
   if(dataUsersAccept) {
     const newBoxUser = document.createElement("div");
