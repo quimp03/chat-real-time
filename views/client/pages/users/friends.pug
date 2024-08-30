@@ -24,4 +24,8 @@ block main
               div(class="inner-buttons")
                 button(
                   class="btn btn-sm btn-primary mr-1"
-                ) Nhắn tin
+                 ) Nhắn tin
+              div(
+                class="inner-status"
+                status=user.statusOnline
+              ) <i class="fa-solid fa-circle"></i>

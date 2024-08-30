@@ -133,6 +133,14 @@ socket.on("SERVER_RETURN_INFO_ACCEPT_FRIEND", (data) => {
     const btnAcceptFriend = document.querySelector("[btn-accept-friend]");
     acceptUser(btnAcceptFriend);
   }
+   // Xóa A khỏi trang Danh sách người dùng của B
+   const dataUsersNotFriend = document.querySelector(`[data-users-not-friend="${data.userIdB}"]`);
+   if(dataUsersNotFriend) {
+     const boxUserA = dataUsersNotFriend.querySelector(`[user-id="${data.infoUserA._id}"]`);
+     if(boxUserA) {
+       dataUsersNotFriend.removeChild(boxUserA);
+     }
+   }
 });
 // End SERVER_RETURN_INFO_ACCEPT_FRIEND
 // SERVER_RETURN_CANCEL_FRIEND
